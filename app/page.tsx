@@ -59,19 +59,19 @@ export default function Home() {
             <div className="flex justify-center gap-4 animate-fade-in-delay-2">
               <Link
                 href="mailto:hoang20161678@gmail.com"
-                className="hover:scale-110 transition-transform"
+                className="hover:scale-125 transition-transform"
               >
                 <Mail className="h-6 w-6" />
               </Link>
               <Link
                 href="tel:+84814462181"
-                className="hover:scale-110 transition-transform"
+                className="hover:scale-125 transition-transform"
               >
                 <Phone className="h-6 w-6" />
               </Link>
               <Link
                 href="https://github.com/hanumanman"
-                className="hover:scale-110 transition-transform"
+                className="hover:scale-125 transition-transform"
               >
                 <Github className="h-6 w-6" />
               </Link>
@@ -82,7 +82,7 @@ export default function Home() {
           <Link href="#about">
             <Button
               variant="ghost"
-              size="icon"
+              size="lg"
               className="rounded-full text-white"
             >
               <MoveDown className="h-6 w-6" />
@@ -114,9 +114,12 @@ export default function Home() {
                     <p className="text-slate-400 mb-4">
                       Degree of Engineer in Control Engineering and Automation
                     </p>
-                    <div className="flex items-center">
+                    <div className="flex gap-2 items-center">
                       <Badge className="bg-slate-700 text-slate-400 hover:bg-slate-600">
                         Engineering
+                      </Badge>
+                      <Badge className="bg-slate-700 text-slate-400 hover:bg-slate-600">
+                        Programming
                       </Badge>
                     </div>
                   </CardContent>
