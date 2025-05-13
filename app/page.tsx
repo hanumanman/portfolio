@@ -542,8 +542,10 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-8 bg-black text-white text-center">
         <div className="container mx-auto px-4">
-          <p>
-            © {new Date().getFullYear()} Nguyễn Huy Hoàng. All rights reserved.
+          <div className="space-y-4"></div>
+          <p className="text-sm text-slate-500">
+            Designed & Built with Next.js and Tailwind CSS @{" "}
+            {new Date().getFullYear()}
           </p>
         </div>
       </footer>
