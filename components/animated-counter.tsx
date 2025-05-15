@@ -1,50 +1,55 @@
-"use client"
+"use client";
 
-import { useEffect, useState, useRef } from "react"
-import { useInView } from "framer-motion"
+import { useEffect, useState, useRef } from "react";
+import { useInView } from "framer-motion";
 
 interface AnimatedCounterProps {
-  value: number
-  duration?: number
-  prefix?: string
-  suffix?: string
+  value: number;
+  duration?: number;
+  prefix?: string;
+  suffix?: string;
 }
 
-export function AnimatedCounter({ value, duration = 1000, prefix = "", suffix = "" }: AnimatedCounterProps) {
-  const [count, setCount] = useState(0)
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true })
+export function AnimatedCounter({
+  value,
+  duration = 1000,
+  prefix = "",
+  suffix = "",
+}: AnimatedCounterProps) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
-    if (!isInView) return
+    if (!isInView) return;
 
-    let startTime: number
-    let animationFrame: number
+    let startTime: number;
+    let animationFrame: number;
 
     const startAnimation = (timestamp: number) => {
-      startTime = timestamp
-      updateCount(timestamp)
-    }
+      startTime = timestamp;
+      updateCount(timestamp);
+    };
 
     const updateCount = (timestamp: number) => {
-      const progress = Math.min((timestamp - startTime) / duration, 1)
-      setCount(Math.floor(progress * value))
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      setCount(Math.floor(progress * value));
 
       if (progress < 1) {
-        animationFrame = requestAnimationFrame(updateCount)
+        animationFrame = requestAnimationFrame(updateCount);
       } else {
-        setCount(value)
+        setCount(value);
       }
-    }
+    };
 
-    animationFrame = requestAnimationFrame(startAnimation)
+    animationFrame = requestAnimationFrame(startAnimation);
 
     return () => {
       if (animationFrame) {
-        cancelAnimationFrame(animationFrame)
+        cancelAnimationFrame(animationFrame);
       }
-    }
-  }, [value, duration, isInView])
+    };
+  }, [value, duration, isInView]);
 
   return (
     <div ref={ref} className="text-4xl md:text-5xl font-bold mb-2 text-white">
@@ -52,5 +57,5 @@ export function AnimatedCounter({ value, duration = 1000, prefix = "", suffix = 
       {count}
       {suffix}
     </div>
-  )
+  );
 }

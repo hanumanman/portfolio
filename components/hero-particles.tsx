@@ -64,7 +64,7 @@ export function HeroParticles() {
     const particles: Particle[] = [];
     const particleCount = Math.min(
       100,
-      Math.floor((window.innerWidth * window.innerHeight) / 10000)
+      Math.floor((window.innerWidth * window.innerHeight) / 10000),
     );
 
     for (let i = 0; i < particleCount; i++) {
