@@ -1,4 +1,3 @@
-import { contactFormSchema } from "@/components/contact-form";
 import { getEnv } from "@/lib/utils";
 import nodemailer from "nodemailer";
 
@@ -41,6 +40,7 @@ export async function POST(request: Request) {
         }
       });
     });
+
     return Response.json({
       status: "success",
       data: body,
@@ -52,7 +52,7 @@ export async function POST(request: Request) {
         message:
           error instanceof Error ? error.message : "Unknown error occurred",
       },
-      { status: 400 }
+      { status: 400 },
     );
   }
 }
