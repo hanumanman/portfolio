@@ -1,24 +1,46 @@
 "use client";
 
-import type React from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { LoaderCircle } from "lucide-react";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { Form, FormControl, FormField, FormItem, FormMessage } from "./ui/form";
+
+const formSchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  email: z.string().min(1, "Email is required").email(),
+  subject: z.string().min(1, "Subject is required"),
+  message: z.string().min(1, "Message is required"),
+});
+
+const defaultValues = {
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+};
 
 export function ContactForm() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  // 1. Define your form.
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues,
+  });
 
-    const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData.entries());
+  // 2. Define a submit handler.
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    // Do something with the form values.
+    // ✅ This will be type-safe and validated.
+    setIsSubmitting(true);
 
     try {
       const response = await fetch("/api/send-email", {
@@ -26,7 +48,7 @@ export function ContactForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(values),
       });
 
       if (response.ok) {
@@ -34,7 +56,6 @@ export function ContactForm() {
           title: "Message sent!",
           description: "Thank you for your message. I'll get back to you soon.",
         });
-        e.currentTarget.reset();
       } else {
         const errorData = await response.json();
         toast({
@@ -53,59 +74,91 @@ export function ContactForm() {
     } finally {
       setIsSubmitting(false);
     }
-  };
+  }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div>
-        <Input
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <FormField
+          control={form.control}
           name="name"
-          placeholder="Your Name"
-          required
-          className="bg-slate-900 border-slate-800 text-white placeholder:text-slate-500"
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input
+                  {...field}
+                  placeholder="Your Name"
+                  className="bg-slate-900 border-slate-800 text-white placeholder:text-slate-500"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
         />
-      </div>
 
-      <div>
-        <Input
+        <FormField
+          control={form.control}
           name="email"
-          type="email"
-          placeholder="Your Email"
-          required
-          className="bg-slate-900 border-slate-800 text-white placeholder:text-slate-500"
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input
+                  {...field}
+                  placeholder="Your Email"
+                  className="bg-slate-900 border-slate-800 text-white placeholder:text-slate-500"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
         />
-      </div>
-
-      <div>
-        <Input
+        <FormField
+          control={form.control}
           name="subject"
-          placeholder="Subject"
-          required
-          className="bg-slate-900 border-slate-800 text-white placeholder:text-slate-500"
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input
+                  {...field}
+                  placeholder="Subject"
+                  className="bg-slate-900 border-slate-800 text-white placeholder:text-slate-500"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
         />
-      </div>
 
-      <div>
-        <Textarea
+        <FormField
+          control={form.control}
           name="message"
-          placeholder="Your Message"
-          required
-          rows={5}
-          className="bg-slate-900 border-slate-800 text-white placeholder:text-slate-500 resize-none"
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Textarea
+                  {...field}
+                  rows={5}
+                  placeholder="Your Message"
+                  className="bg-slate-900 resize-none border-slate-800 text-white placeholder:text-slate-500"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
         />
-      </div>
 
-      <Button
-        type="submit"
-        className="w-full text-slate-300 bg-slate-800 hover:bg-slate-700"
-        disabled={isSubmitting}
-      >
-        {isSubmitting ? (
-          <LoaderCircle size={24} className="animate-spin" />
-        ) : (
-          "Send Message"
-        )}
-      </Button>
-    </form>
+        <Button
+          type="submit"
+          className="w-full text-slate-300 bg-slate-800 hover:bg-slate-700"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? (
+            <LoaderCircle size={24} className="animate-spin" />
+          ) : (
+            "Send Message"
+          )}
+        </Button>
+      </form>
+    </Form>
   );
 }

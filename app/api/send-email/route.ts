@@ -13,7 +13,7 @@ export async function POST(request: Request) {
         message:
           error instanceof Error ? error.message : "Unknown error occurred",
       },
-      { status: 400 },
+      { status: 400 }
     );
   }
 }
