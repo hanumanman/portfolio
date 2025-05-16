@@ -10,7 +10,7 @@ export const HeroSection = () => {
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">
-            Nguyễn Huy Hoàng
+            Hoang Nguyen
           </h1>
           <h2 className="text-xl md:text-2xl text-slate-400 mb-8 animate-slide-up">
             Frontend Developer
