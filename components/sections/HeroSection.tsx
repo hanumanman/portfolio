@@ -53,7 +53,7 @@ export const HeroSection = () => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-32 w-full flex justify-center animate-bounce">
         <Link href="#about">
           <Button variant="ghost" size="lg" className="rounded-full text-white">
             <MoveDown className="h-6 w-6" />

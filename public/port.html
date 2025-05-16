@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nguyễn Huy Hoàng - Frontend Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Modern CSS Reset */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Base Variables */
+      :root {
+        /* Colors - Using your slate theme from your Next.js portfolio */
+        --color-slate-950: #0f172a;
+        --color-slate-900: #1e293b;
+        --color-slate-800: #334155;
+        --color-slate-700: #475569;
+        --color-slate-600: #64748b;
+        --color-slate-500: #94a3b8;
+        --color-slate-400: #cbd5e1;
+        --color-slate-300: #e2e8f0;
+        --color-slate-200: #f1f5f9;
+        --color-slate-100: #f8fafc;
+        --color-white: #ffffff;
+
+        /* Accent colors */
+        --color-primary: #3b82f6;
+        --color-primary-hover: #2563eb;
+        --color-primary-light: #bfdbfe;
+
+        /* Typography */
+        --font-primary:
+          "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+
+        /* Spacing */
+        --space-1: 0.25rem;
+        --space-2: 0.5rem;
+        --space-3: 0.75rem;
+        --space-4: 1rem;
+        --space-5: 1.25rem;
+        --space-6: 1.5rem;
+        --space-8: 2rem;
+        --space-10: 2.5rem;
+        --space-12: 3rem;
+        --space-16: 4rem;
+
+        /* Borders */
+        --radius-sm: 0.25rem;
+        --radius-md: 0.5rem;
+        --radius-lg: 0.75rem;
+        --radius-xl: 1rem;
+
+        /* Shadows */
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow:
+          0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        --shadow-md:
+          0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-lg:
+          0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --shadow-xl:
+          0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+        /* Transitions */
+        --transition-base: all 0.2s ease;
+        --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* Base Styles */
+      html {
+        font-size: 16px;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--color-slate-100);
+        color: var(--color-slate-900);
+        font-family: var(--font-primary);
+        line-height: 1.5;
+      }
+
+      /* Typography */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        line-height: 1.2;
+        font-weight: 600;
+      }
+
+      h1 {
+        font-size: 2.75rem;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+      }
+
+      h2 {
+        font-size: 1.875rem;
+        letter-spacing: -0.025em;
+        color: var(--color-slate-900);
+        position: relative;
+        /* margin-bottom: var(--space-6); */
+        /* padding-bottom: var(--space-4); */
+      }
+
+      /* h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 3.5rem;
+        height: 3px;
+        background-color: var(--color-primary);
+        border-radius: var(--radius-lg);
+      } */
+
+      h3 {
+        font-size: 1.5rem;
+        color: var(--color-slate-800);
+        margin-bottom: var(--space-4);
+      }
+
+      h4 {
+        font-size: 1.25rem;
+        color: var(--color-slate-800);
+        margin-bottom: var (--space-3);
+      }
+
+      p {
+        margin-bottom: var(--space-4);
+      }
+
+      /* Container */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 var(--space-6);
+      }
+
+      /* Header/Hero */
+      .hero {
+        background: linear-gradient(
+          135deg,
+          var(--color-slate-900),
+          var(--color-slate-950)
+        );
+        color: var(--color-white);
+        padding: var(--space-16) 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+          circle at 80% 20%,
+          rgba(59, 130, 246, 0.15),
+          transparent 60%
+        );
+        z-index: 1;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        width: 30rem;
+        height: 30rem;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(59, 130, 246, 0.1),
+          transparent 70%
+        );
+        top: -10rem;
+        right: -10rem;
+        z-index: 0;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        margin-bottom: var(--space-4);
+        animation: fadeIn 1s ease-out;
+      }
+
+      .hero-subtitle {
+        font-size: 1.375rem;
+        color: var(--color-slate-300);
+        margin-bottom: var(--space-8);
+        animation: fadeIn 1.2s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Portfolio Button */
+      .portfolio-link {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-3);
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        padding: var(--space-3) var(--space-6);
+        border-radius: var(--radius-md);
+        font-weight: 500;
+        text-decoration: none;
+        transition: var(--transition-smooth);
+        box-shadow: var(--shadow-md);
+        margin-bottom: var(--space-8);
+      }
+
+      .portfolio-link:hover {
+        background-color: var(--color-primary-hover);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      /* Contact Row */
+      .contact-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-5);
+        margin-top: var(--space-8);
+        margin-bottom: var(--space-8);
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        padding: var(--space-3) var(--space-5);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: var(--transition-smooth);
+      }
+
+      .contact-item:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .contact-item a {
+        color: var(--color-white);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .contact-item a:hover {
+        color: var(--color-primary-light);
+      }
+
+      /* Main Content */
+      .main-content {
+        background-color: var(--color-white);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+        margin-top: -4rem;
+        position: relative;
+        z-index: 3;
+        padding: var(--space-10) var(--space-8);
+        margin-bottom: var(--space-16);
+      }
+
+      /* Sections */
+      .section {
+        margin-bottom: var(--space-16);
+      }
+
+      .section:last-child {
+        margin-bottom: 0;
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+        padding-bottom: var(--space-6);
+      }
+
+      .section-heading svg {
+        color: var(--color-primary);
+      }
+
+      /* Skills Grid */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: var(--space-6);
+        margin-top: var(--space-6);
+      }
+
+      .skill-card {
+        background-color: var(--color-slate-100);
+        border-radius: var(--radius-lg);
+        padding: var(--space-6);
+        box-shadow: var(--shadow);
+        transition: var(--transition-smooth);
+        /* border-left: 4px solid var(--color-primary); */
+      }
+
+      .skill-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .skill-title {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: var(--space-3);
+        color: var(--color-slate-900);
+      }
+
+      .skill-items {
+        color: var(--color-slate-700);
+        line-height: 1.7;
+      }
+
+      /* Certificates */
+      .certificate {
+        margin-bottom: var(--space-8);
+      }
+
+      .certificate-title {
+        font-weight: 600;
+        font-size: 1.125rem;
+        color: var(--color-slate-800);
+      }
+
+      .certificate-desc {
+        color: var(--color-slate-600);
+      }
+
+      /* Experience & Projects */
+      .company-header {
+        display: inline-block;
+        background-color: var(--color-primary-light);
+        color: var(--color-slate-900);
+        font-weight: 600;
+        padding: var(--space-2) var(--space-4);
+        border-radius: var(--radius-md);
+        margin-bottom: var(--space-5);
+      }
+
+      .responsibility-list {
+        padding-left: 1.5rem;
+        margin-bottom: var(--space-8);
+      }
+
+      .responsibility-list li {
+        margin-bottom: var(--space-3);
+        position: relative;
+        color: var(--color-slate-800);
+      }
+
+      .responsibility-list li::marker {
+        color: var(--color-primary);
+      }
+
+      /* Project Cards */
+      .project-card {
+        background-color: var(--color-white);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+        padding: var(--space-6);
+        margin-bottom: var(--space-8);
+        transition: var(--transition-smooth);
+        border: 1px solid var(--color-slate-500);
+      }
+
+      .project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .project-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--color-slate-900);
+        margin-bottom: var(--space-4);
+        padding-bottom: var(--space-3);
+        border-bottom: 1px solid var(--color-slate-200);
+      }
+
+      .project-meta {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--space-4);
+        margin-bottom: var(--space-5);
+      }
+
+      .meta-item {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .meta-label {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--color-slate-500);
+        margin-bottom: var(--space-1);
+      }
+
+      .meta-value {
+        font-weight: 500;
+        color: var(--color-slate-800);
+      }
+
+      /* Hobbies & Interests */
+      .hobby-list {
+        padding-left: 1.5rem;
+      }
+
+      .hobby-list li {
+        margin-bottom: var(--space-3);
+        color: var(--color-slate-800);
+      }
+
+      /* Footer */
+      .footer {
+        background-color: var(--color-slate-900);
+        color: var(--color-slate-300);
+        text-align: center;
+        padding: var(--space-8) 0;
+      }
+
+      .footer p {
+        font-size: 0.875rem;
+        margin: 0;
+      }
+
+      /* Media Queries */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.25rem;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        .hero {
+          padding: var(--space-12) 0;
+        }
+
+        .main-content {
+          padding: var(--space-6);
+          margin-top: -3rem;
+        }
+
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-row {
+          flex-direction: column;
+          gap: var(--space-3);
+        }
+
+        .project-meta {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          padding: 0 var(--space-4);
+        }
+
+        h1 {
+          font-size: 1.875rem;
+        }
+
+        .hero {
+          padding: var(--space-8) 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Hero Section with background effects -->
+    <header class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Nguyễn Huy Hoàng</h1>
+          <p class="hero-subtitle">Frontend Developer</p>
+
+          <a
+            href="https://portfolio-azure-three-53.vercel.app/"
+            class="portfolio-link"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"
+              />
+            </svg>
+            Visit My Portfolio Website
+          </a>
+
+          <div class="contact-row">
+            <div class="contact-item">
+              <span class="contact-icon">📱</span>
+              <a href="tel:+84-814-462-181">+84-814-462-181</a>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                  />
+                </svg>
+              </span>
+              <a href="https://github.com/hanumanman" target="_blank"
+                >github.com/hanumanman</a
+              >
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-icon">✉️</span>
+              <a href="mailto:hoang20161678@gmail.com"
+                >hoang20161678@gmail.com</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Section with Cards -->
+    <div class="container">
+      <main class="main-content">
+        <!-- Skills Section -->
+        <section class="section">
+          <div class="section-heading">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5h11zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2h-11zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5z"
+              />
+            </svg>
+            <h2>Skills & Expertise</h2>
+          </div>
+
+          <div class="skills-grid">
+            <div class="skill-card">
+              <div class="skill-title">Programming</div>
+              <div class="skill-items">
+                JavaScript, TypeScript, HTML/CSS, C, C++, SQL, Lua
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-title">Framework</div>
+              <div class="skill-items">
+                React, NextJS, Svelte, SvelteKit, Node, Express, NestJS, React
+                Native, Hono
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-title">Database</div>
+              <div class="skill-items">
+                SQL, SQLite, PostgreSQL, Prisma, Drizzle
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-title">Tools</div>
+              <div class="skill-items">
+                Git, Docker, Confluence, Jira, Figma
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-title">System</div>
+              <div class="skill-items">Linux, Windows</div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-title">Methodology</div>
+              <div class="skill-items">Agile</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="section">
+          <div class="section-heading">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"
+              />
+              <path
+                d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"
+              />
+            </svg>
+            <h2>Education & Certificates</h2>
+          </div>
+
+          <div class="certificate">
+            <div class="certificate-title">
+              Hanoi University of Science and Technology
+            </div>
+            <div class="certificate-desc">
+              Degree of Engineer in Control Engineering and Automation.
+            </div>
+          </div>
+
+          <div class="certificate">
+            <div class="certificate-title">British Council Vietnam</div>
+            <div class="certificate-desc">7.5 in Academic IELTS Test.</div>
+          </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="section">
+          <div class="section-heading">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
+              />
+            </svg>
+            <h2>Working Experience</h2>
+          </div>
+
+          <div class="company-header">Sotatek (2021 - Present)</div>
+
+          <h3>Key Responsibilities</h3>
+          <ul class="responsibility-list">
+            <li>
+              Collaborated with frontend developers to implement pixel-perfect
+              UIs based on Figma designs.
+            </li>
+            <li>
+              Optimize website performance through comprehensive frontend
+              metrics monitoring and analysis.
+            </li>
+            <li>
+              Worked closely with backend developers to integrate RESTful APIs
+              seamlessly.
+            </li>
+            <li>
+              Participated in daily Agile Scrum meetings with international
+              clients to align on project goals and progress.
+            </li>
+            <li>
+              Researched and adopted new technologies to enhance project
+              development and efficiency.
+            </li>
+          </ul>
+
+          <h3>Notable Projects</h3>
+
+          <div class="project-card">
+            <h4 class="project-title">AI Chatbot</h4>
+            <div class="project-meta">
+              <div class="meta-item">
+                <div class="meta-label">Client</div>
+                <div class="meta-value">Singapore-based fashion brand</div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-label">Team Size</div>
+                <div class="meta-value">11 members</div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-label">Role</div>
+                <div class="meta-value">Frontend Developer</div>
+              </div>
+            </div>
+
+            <h4>Responsibilities:</h4>
+            <ul class="responsibility-list">
+              <li>Setting up codebase.</li>
+              <li>
+                Developed interactive, responsive UI for various screen sizes
+                using React (NextJS + Tailwind).
+              </li>
+              <li>
+                Implemented localization using i18n for multi-language support.
+              </li>
+              <li>
+                Integrated authentication systems using NextAuth and AzureAD.
+              </li>
+              <li>
+                Implemented database connections using Prisma ORM with MySQL.
+              </li>
+              <li>Maintained code quality through unit testing with Jest.</li>
+            </ul>
+          </div>
+
+          <div class="project-card">
+            <h4 class="project-title">PingPong Platform Mobile App</h4>
+            <div class="project-meta">
+              <div class="meta-item">
+                <div class="meta-label">Client</div>
+                <div class="meta-value">Hongkong-based software company</div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-label">Team Size</div>
+                <div class="meta-value">10 members</div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-label">Role</div>
+                <div class="meta-value">Frontend Developer</div>
+              </div>
+            </div>
+
+            <h4>Responsibilities:</h4>
+            <ul class="responsibility-list">
+              <li>
+                Maintain a mobile application to connect pingpong coaches,
+                players and venue, using React Native
+              </li>
+            </ul>
+          </div>
+
+          <div class="project-card">
+            <h4 class="project-title">
+              Admin Portal for User and Client Management
+            </h4>
+            <div class="project-meta">
+              <div class="meta-item">
+                <div class="meta-label">Client</div>
+                <div class="meta-value">Korean financial firm</div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-label">Team Size</div>
+                <div class="meta-value">22 members</div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-label">Role</div>
+                <div class="meta-value">Frontend Developer</div>
+              </div>
+            </div>
+
+            <h4>Responsibilities:</h4>
+            <ul class="responsibility-list">
+              <li>Developed UI using React (NextJS + Shadcn + Tailwind).</li>
+              <li>
+                Integrating API with other backend developers using React Query
+                + Axios.
+              </li>
+              <li>
+                Crafting dynamic forms with custom validations using React Hook
+                Form.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Hobbies Section -->
+        <section class="section">
+          <div class="section-heading">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+              />
+              <path
+                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+              />
+            </svg>
+            <h2>Hobbies & Interests</h2>
+          </div>
+
+          <ul class="hobby-list">
+            <li>Music & Movies.</li>
+            <li>Learning new technologies with side projects.</li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>© 2024 Nguyễn Huy Hoàng - Frontend Developer</p>
+      </div>
+    </footer>
+  </body>
+</html>

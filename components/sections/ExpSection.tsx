@@ -1,5 +1,5 @@
-import { Badge } from "lucide-react";
 import { ScrollReveal } from "../scroll-reveal";
+import { Badge } from "../ui/badge";
 import { Card, CardContent } from "../ui/card";
 
 export const ExpSection = () => {
