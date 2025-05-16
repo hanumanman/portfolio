@@ -30,21 +30,17 @@ export async function POST(request: Request) {
 <p>${message}</p>`,
     };
 
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.error("Error sending email:", error);
-        return Response.json(
-          {
-            status: "error",
-            message: "Error sending email",
-          },
-          { status: 500 }
-        );
-      } else {
-        console.log("Email sent:", info.response);
-      }
+    await new Promise((resolve, reject) => {
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          console.error("Error sending email:", error);
+          reject(error);
+        } else {
+          console.log("Email sent:", info.response);
+          resolve(info);
+        }
+      });
     });
-
     return Response.json({
       status: "success",
       data: body,
