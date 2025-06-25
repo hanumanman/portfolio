@@ -17,9 +17,8 @@ export function ExperienceSection() {
             Work Experience
           </h2>
           <p className="text-center text-slate-400 mb-16 max-w-2xl mx-auto">
-            Here are some notable projects I've worked on at Sotatek. These represent a selection of
-            my work - I've contributed to many more projects across various domains and
-            technologies.
+            Here are some notable projects I've worked on. These represent a selection of my work -
+            I've contributed to many more projects across various domains and technologies.
           </p>
           <div className="max-w-4xl mx-auto mb-12">
             <Card className="bg-slate-900/50 border-slate-700 backdrop-blur-sm shadow-xl shadow-orange-500/10">
