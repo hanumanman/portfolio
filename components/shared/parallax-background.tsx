@@ -14,12 +14,22 @@ export function ParallaxBackground() {
     <>
       {/* Fixed background image - mobile-friendly approach */}
       <div
-        className="fixed inset-0 -z-30 w-full h-full bg-cover bg-center bg-no-repeat"
+        className="fixed inset-0 -z-30 w-full"
         style={{
           backgroundImage: "url('/background.jpg')",
           // Remove backgroundAttachment: "fixed" as it causes issues on mobile
-          // Use transform instead for better mobile compatibility
+          // Use transform and will-change for better mobile compatibility
           transform: "translate3d(0, 0, 0)", // Force hardware acceleration
+          willChange: "transform", // Optimize for transforms
+          backgroundSize: "cover", // Ensure consistent sizing
+          backgroundPosition: "center center", // Lock position
+          backfaceVisibility: "hidden", // Prevent flickering
+          // Use viewport units that account for mobile browser UI changes
+          height: "100dvh", // Dynamic viewport height - accounts for mobile browser UI
+          minHeight: "100vh", // Fallback for browsers that don't support dvh
+          width: "100vw",
+          top: 0,
+          left: 0,
         }}
       />
 
