@@ -7,7 +7,19 @@ import { motion, useScroll, useTransform, useInView } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Mail, Phone, Github, MapPin, Calendar, Users, Code, Database, Globe, Wrench, Monitor } from "lucide-react"
+import {
+  Mail,
+  Phone,
+  Github,
+  MapPin,
+  Calendar,
+  Users,
+  Code,
+  Database,
+  Globe,
+  Wrench,
+  Monitor,
+} from "lucide-react"
 
 const skills = {
   programming: ["JavaScript", "TypeScript", "HTML/CSS", "C", "C++", "SQL", "Lua"],
@@ -59,7 +71,13 @@ const projects = [
   },
 ]
 
-function AnimatedSection({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function AnimatedSection({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode
+  className?: string
+}) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
@@ -152,10 +170,10 @@ export default function Portfolio() {
     }
 
     const links = document.querySelectorAll('a[href^="#"]')
-    links.forEach((link) => link.addEventListener("click", handleSmoothScroll))
+    links.forEach(link => link.addEventListener("click", handleSmoothScroll))
 
     return () => {
-      links.forEach((link) => link.removeEventListener("click", handleSmoothScroll))
+      links.forEach(link => link.removeEventListener("click", handleSmoothScroll))
     }
   }, [])
 
@@ -184,7 +202,7 @@ export default function Portfolio() {
               Nguyễn Huy Hoàng
             </motion.h1>
             <div className="hidden md:flex space-x-6">
-              {["About", "Skills", "Education", "Experience", "Contact"].map((item) => (
+              {["About", "Skills", "Education", "Experience", "Contact"].map(item => (
                 <motion.a
                   key={item}
                   href={`#${item.toLowerCase()}`}
@@ -202,7 +220,11 @@ export default function Portfolio() {
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center relative pt-20">
         <div className="container mx-auto px-6 text-center">
-          <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             <motion.h1
               className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent"
               style={{
@@ -236,7 +258,9 @@ export default function Portfolio() {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 shadow-lg shadow-blue-500/25"
-                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() =>
+                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+                }
               >
                 <Mail className="mr-2 h-4 w-4" />
                 Get In Touch
@@ -277,9 +301,9 @@ export default function Portfolio() {
               <Card className="bg-slate-900/50 border-slate-700 backdrop-blur-sm shadow-xl shadow-blue-500/10">
                 <CardContent className="p-8">
                   <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                    I'm a passionate Full-Stack Developer with a background in Control Engineering and Automation.
-                    Currently working at Sotatek since 2021, I specialize in building modern web applications using
-                    React, Next.js, and TypeScript.
+                    I'm a passionate Full-Stack Developer with a background in Control Engineering
+                    and Automation. Currently working at Sotatek since 2021, I specialize in
+                    building modern web applications using React, Next.js, and TypeScript.
                   </p>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
@@ -292,8 +316,8 @@ export default function Portfolio() {
                     <div>
                       <h3 className="text-xl font-semibold mb-4 text-blue-400">Approach</h3>
                       <p className="text-slate-300">
-                        I follow secure coding practices and work collaboratively in Agile environments with
-                        international clients to deliver high-quality solutions.
+                        I follow secure coding practices and work collaboratively in Agile
+                        environments with international clients to deliver high-quality solutions.
                       </p>
                     </div>
                   </div>
@@ -334,7 +358,11 @@ export default function Portfolio() {
                   </div>
                   <div className="flex flex-wrap gap-3">
                     {items.map((skill, skillIndex) => (
-                      <SkillBadge key={skill} skill={skill} delay={categoryIndex * 0.1 + skillIndex * 0.05} />
+                      <SkillBadge
+                        key={skill}
+                        skill={skill}
+                        delay={categoryIndex * 0.1 + skillIndex * 0.05}
+                      />
                     ))}
                   </div>
                 </motion.div>
@@ -360,7 +388,9 @@ export default function Portfolio() {
               >
                 <Card className="bg-slate-900/50 border-slate-700 backdrop-blur-sm hover:bg-slate-800/50 transition-colors shadow-xl shadow-blue-500/10">
                   <CardHeader>
-                    <CardTitle className="text-blue-400">Hanoi University of Science and Technology</CardTitle>
+                    <CardTitle className="text-blue-400">
+                      Hanoi University of Science and Technology
+                    </CardTitle>
                     <CardDescription className="text-slate-400">
                       Degree of Engineer in Control Engineering and Automation
                     </CardDescription>
@@ -376,7 +406,9 @@ export default function Portfolio() {
                 <Card className="bg-slate-900/50 border-slate-700 backdrop-blur-sm hover:bg-slate-800/50 transition-colors shadow-xl shadow-cyan-500/10">
                   <CardHeader>
                     <CardTitle className="text-cyan-400">British Council Vietnam</CardTitle>
-                    <CardDescription className="text-slate-400">7.5 in Academic IELTS Test</CardDescription>
+                    <CardDescription className="text-slate-400">
+                      7.5 in Academic IELTS Test
+                    </CardDescription>
                   </CardHeader>
                 </Card>
               </motion.div>
@@ -393,8 +425,9 @@ export default function Portfolio() {
               Work Experience
             </h2>
             <p className="text-center text-slate-400 mb-16 max-w-2xl mx-auto">
-              Here are some notable projects I've worked on at Sotatek. These represent a selection of my work - I've
-              contributed to many more projects across various domains and technologies.
+              Here are some notable projects I've worked on at Sotatek. These represent a selection
+              of my work - I've contributed to many more projects across various domains and
+              technologies.
             </p>
             <div className="max-w-4xl mx-auto mb-12">
               <Card className="bg-slate-900/50 border-slate-700 backdrop-blur-sm shadow-xl shadow-blue-500/10">
@@ -460,8 +493,8 @@ export default function Portfolio() {
             </h2>
             <div className="max-w-2xl mx-auto text-center">
               <p className="text-lg text-slate-300 mb-8">
-                I'm always interested in new opportunities and exciting projects. Feel free to reach out if you'd like
-                to work together!
+                I'm always interested in new opportunities and exciting projects. Feel free to reach
+                out if you'd like to work together!
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <motion.a
@@ -499,7 +532,9 @@ export default function Portfolio() {
       {/* Footer */}
       <footer className="py-8 border-t border-slate-800">
         <div className="container mx-auto px-6 text-center">
-          <p className="text-slate-400">© 2024 Nguyễn Huy Hoàng. Built with Next.js and Tailwind CSS.</p>
+          <p className="text-slate-400">
+            © 2024 Nguyễn Huy Hoàng. Built with Next.js and Tailwind CSS.
+          </p>
         </div>
       </footer>
     </div>
