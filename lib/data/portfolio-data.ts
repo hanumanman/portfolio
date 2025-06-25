@@ -49,8 +49,8 @@ export const projects = [
 ]
 
 export const personalInfo = {
-  name: "Nguyễn Huy Hoàng",
-  title: "Full-Stack Developer & Control Engineering Graduate",
+  name: "Hoang Nguyen",
+  title: "A Web Developer",
   phone: "+84-814-462-181",
   email: "hoang20161678@gmail.com",
   github: "hanumanman",

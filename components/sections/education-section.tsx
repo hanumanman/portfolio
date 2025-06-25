@@ -20,9 +20,10 @@ export function EducationSection() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
+              className="h-full"
             >
-              <Card className="bg-slate-900/50 border-slate-700 backdrop-blur-sm hover:bg-slate-800/50 transition-colors shadow-xl shadow-blue-500/10">
-                <CardHeader>
+              <Card className="bg-slate-900/50 border-slate-700 backdrop-blur-sm hover:bg-slate-800/50 transition-colors shadow-xl shadow-blue-500/10 h-full flex flex-col">
+                <CardHeader className="flex-1">
                   <CardTitle className="text-blue-400">
                     Hanoi University of Science and Technology
                   </CardTitle>
@@ -37,9 +38,10 @@ export function EducationSection() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
+              className="h-full"
             >
-              <Card className="bg-slate-900/50 border-slate-700 backdrop-blur-sm hover:bg-slate-800/50 transition-colors shadow-xl shadow-cyan-500/10">
-                <CardHeader>
+              <Card className="bg-slate-900/50 border-slate-700 backdrop-blur-sm hover:bg-slate-800/50 transition-colors shadow-xl shadow-cyan-500/10 h-full flex flex-col">
+                <CardHeader className="flex-1">
                   <CardTitle className="text-cyan-400">British Council Vietnam</CardTitle>
                   <CardDescription className="text-slate-400">
                     7.5 in Academic IELTS Test
