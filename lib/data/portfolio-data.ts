@@ -1,7 +1,7 @@
 export const skills = {
-  programming: ["JavaScript", "TypeScript", "HTML/CSS", "C", "C++", "SQL", "Lua"],
+  programming: ["JavaScript", "TypeScript", "HTML/CSS", "SQL", "Lua", "C++"],
   frameworks: ["React", "NextJS", "Svelte", "Node", "Hono", "Express", "NestJS", "Elysia"],
-  database: ["SQL", "SQLite", "PostgreSQL"],
+  database: ["SQL", "SQLite", "PostgreSQL", "MongoDB"],
   tools: ["Git", "Docker", "Confluence", "Jira", "Figma"],
   system: ["Linux", "Windows"],
   methodology: ["Agile"],

@@ -46,13 +46,13 @@ export function HeroSection() {
           >
             <Button
               size="lg"
-              className="bg-gradient-to-r flex justify-center items-center from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 shadow-lg shadow-orange-500/25"
+              className="bg-gradient-to-r from-orange-500 to-amber-500 hover:brightness-110 transition-all duration-200 shadow-lg shadow-orange-500/25 px-4 flex items-center justify-center"
               onClick={() =>
                 document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
               }
             >
               <Mail size={20} />
-              <p className="h-fit">Get In Touch</p>
+              <span className="transform translate-y-[2px]">Get In Touch</span>
             </Button>
           </motion.div>
         </motion.div>
