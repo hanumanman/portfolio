@@ -12,12 +12,14 @@ export function ParallaxBackground() {
 
   return (
     <>
-      {/* Fixed background image - stays completely still */}
+      {/* Fixed background image - mobile-friendly approach */}
       <div
         className="fixed inset-0 -z-30 w-full h-full bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('/background.jpg')",
-          backgroundAttachment: "fixed",
+          // Remove backgroundAttachment: "fixed" as it causes issues on mobile
+          // Use transform instead for better mobile compatibility
+          transform: "translate3d(0, 0, 0)", // Force hardware acceleration
         }}
       />
 
