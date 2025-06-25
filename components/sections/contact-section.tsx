@@ -12,7 +12,7 @@ export function ContactSection() {
       <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm" />
       <div className="container mx-auto px-6 relative z-10">
         <AnimatedSection>
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
             Get In Touch
           </h2>
           <div className="max-w-2xl mx-auto text-center">
@@ -24,7 +24,7 @@ export function ContactSection() {
               <motion.a
                 href={`mailto:${personalInfo.email}`}
                 whileHover={{ scale: 1.05 }}
-                className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
+                className="flex items-center gap-2 text-orange-400 hover:text-orange-300 transition-colors"
               >
                 <Mail className="h-5 w-5" />
                 {personalInfo.email}
@@ -32,7 +32,7 @@ export function ContactSection() {
               <motion.a
                 href={`tel:${personalInfo.phone}`}
                 whileHover={{ scale: 1.05 }}
-                className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors"
+                className="flex items-center gap-2 text-amber-400 hover:text-amber-300 transition-colors"
               >
                 <Phone className="h-5 w-5" />
                 {personalInfo.phone}
@@ -42,7 +42,7 @@ export function ContactSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
-                className="flex items-center gap-2 text-sky-400 hover:text-sky-300 transition-colors"
+                className="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 transition-colors"
               >
                 <Github className="h-5 w-5" />
                 {personalInfo.github}

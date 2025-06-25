@@ -13,14 +13,14 @@ export function SkillBadge({ skill, delay }: SkillBadgeProps) {
     <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ delay, duration: 0.5 }}
+      transition={{ delay, duration: 0.3 }}
       whileHover={{ scale: 1.1, y: -5 }}
       viewport={{ once: true }}
       className="relative"
     >
       <Badge
         variant="secondary"
-        className="bg-slate-800/50 text-slate-300 hover:bg-blue-600/80 hover:text-white transition-all duration-300 px-4 py-2 text-sm border border-blue-500/20 backdrop-blur-sm"
+        className="bg-slate-800/50 text-slate-300 hover:bg-gradient-to-r hover:from-orange-500/80 hover:to-amber-500/80 hover:text-white transition-all duration-300 px-4 py-2 text-sm border border-orange-500/20 backdrop-blur-sm"
       >
         {skill}
       </Badge>

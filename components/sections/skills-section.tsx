@@ -16,12 +16,12 @@ const categoryIcons = {
 }
 
 const categoryColors = {
-  programming: "text-blue-400",
-  frameworks: "text-cyan-400",
-  database: "text-sky-400",
-  tools: "text-blue-400",
-  system: "text-cyan-400",
-  methodology: "text-sky-400",
+  programming: "text-orange-400",
+  frameworks: "text-amber-400",
+  database: "text-yellow-400",
+  tools: "text-orange-400",
+  system: "text-amber-400",
+  methodology: "text-yellow-400",
 }
 
 export function SkillsSection() {
@@ -31,7 +31,7 @@ export function SkillsSection() {
       <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm" />
       <div className="container mx-auto px-6 relative z-10">
         <AnimatedSection>
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
             Skills & Technologies
           </h2>
           <div className="max-w-6xl mx-auto">
@@ -44,7 +44,7 @@ export function SkillsSection() {
                   key={category}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: categoryIndex * 0.2, duration: 0.6 }}
+                  transition={{ delay: categoryIndex * 0.1, duration: 0.4 }}
                   viewport={{ once: true }}
                   className="mb-12"
                 >
@@ -59,7 +59,7 @@ export function SkillsSection() {
                       <SkillBadge
                         key={skill}
                         skill={skill}
-                        delay={categoryIndex * 0.1 + skillIndex * 0.05}
+                        delay={categoryIndex * 0.05 + skillIndex * 0.03}
                       />
                     ))}
                   </div>

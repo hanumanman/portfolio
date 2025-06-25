@@ -13,7 +13,7 @@ export function ExperienceSection() {
       <div className="absolute inset-0 bg-slate-950/75 backdrop-blur-sm" />
       <div className="container mx-auto px-6 relative z-10">
         <AnimatedSection>
-          <h2 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
             Work Experience
           </h2>
           <p className="text-center text-slate-400 mb-16 max-w-2xl mx-auto">
@@ -22,9 +22,9 @@ export function ExperienceSection() {
             technologies.
           </p>
           <div className="max-w-4xl mx-auto mb-12">
-            <Card className="bg-slate-900/50 border-slate-700 backdrop-blur-sm shadow-xl shadow-blue-500/10">
+            <Card className="bg-slate-900/50 border-slate-700 backdrop-blur-sm shadow-xl shadow-orange-500/10">
               <CardHeader>
-                <CardTitle className="text-2xl text-blue-400">Sotatek</CardTitle>
+                <CardTitle className="text-2xl text-orange-400">Sotatek</CardTitle>
                 <CardDescription className="text-slate-400 flex items-center gap-2">
                   <Calendar className="h-4 w-4" />
                   2021 - Present
@@ -38,12 +38,12 @@ export function ExperienceSection() {
                 key={project.title}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
+                transition={{ delay: index * 0.05, duration: 0.4 }}
                 viewport={{ once: true }}
               >
-                <Card className="bg-slate-900/50 border-slate-700 backdrop-blur-sm hover:bg-slate-800/50 transition-colors shadow-xl shadow-blue-500/5">
+                <Card className="bg-slate-900/50 border-slate-700 backdrop-blur-sm hover:bg-slate-800/50 transition-colors shadow-xl shadow-orange-500/5">
                   <CardHeader>
-                    <CardTitle className="text-xl text-blue-400">{project.title}</CardTitle>
+                    <CardTitle className="text-xl text-orange-400">{project.title}</CardTitle>
                     <CardDescription className="text-slate-400">
                       <div className="flex flex-wrap gap-4 mt-2">
                         <span className="flex items-center gap-1">
@@ -62,7 +62,7 @@ export function ExperienceSection() {
                     <ul className="space-y-2">
                       {project.responsibilities.map((responsibility, idx) => (
                         <li key={idx} className="text-slate-300 flex items-start gap-2">
-                          <span className="text-blue-400 mt-1">•</span>
+                          <span className="text-orange-400 mt-1">•</span>
                           {responsibility}
                         </li>
                       ))}

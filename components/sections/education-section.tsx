@@ -11,20 +11,20 @@ export function EducationSection() {
       <div className="absolute inset-0 bg-slate-950/75 backdrop-blur-sm" />
       <div className="container mx-auto px-6 relative z-10">
         <AnimatedSection>
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
             Education & Certificates
           </h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.4 }}
               viewport={{ once: true }}
               className="h-full"
             >
-              <Card className="bg-slate-900/50 border-slate-700 backdrop-blur-sm hover:bg-slate-800/50 transition-colors shadow-xl shadow-blue-500/10 h-full flex flex-col">
+              <Card className="bg-slate-900/50 border-slate-700 backdrop-blur-sm hover:bg-slate-800/50 transition-colors shadow-xl shadow-orange-500/10 h-full flex flex-col">
                 <CardHeader className="flex-1">
-                  <CardTitle className="text-blue-400">
+                  <CardTitle className="text-orange-400">
                     Hanoi University of Science and Technology
                   </CardTitle>
                   <CardDescription className="text-slate-400">
@@ -36,13 +36,13 @@ export function EducationSection() {
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
               viewport={{ once: true }}
               className="h-full"
             >
-              <Card className="bg-slate-900/50 border-slate-700 backdrop-blur-sm hover:bg-slate-800/50 transition-colors shadow-xl shadow-cyan-500/10 h-full flex flex-col">
+              <Card className="bg-slate-900/50 border-slate-700 backdrop-blur-sm hover:bg-slate-800/50 transition-colors shadow-xl shadow-amber-500/10 h-full flex flex-col">
                 <CardHeader className="flex-1">
-                  <CardTitle className="text-cyan-400">British Council Vietnam</CardTitle>
+                  <CardTitle className="text-amber-400">British Council Vietnam</CardTitle>
                   <CardDescription className="text-slate-400">
                     7.5 in Academic IELTS Test
                   </CardDescription>

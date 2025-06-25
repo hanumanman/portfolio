@@ -14,7 +14,7 @@ export function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5 }}
         >
           <motion.h1
             className="text-5xl md:text-7xl font-bold mb-8 text-slate-100 drop-shadow-xl leading-tight"
@@ -29,7 +29,7 @@ export function HeroSection() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
             className="text-xl md:text-2xl text-slate-200 mb-8 drop-shadow-xl font-medium"
             style={{
               textShadow: "0 4px 8px rgba(0, 0, 0, 0.9), 0 2px 4px rgba(0, 0, 0, 0.8)",
@@ -41,18 +41,18 @@ export function HeroSection() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <Button
               size="lg"
-              className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 shadow-lg shadow-blue-500/25"
+              className="bg-gradient-to-r flex justify-center items-center from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 shadow-lg shadow-orange-500/25"
               onClick={() =>
                 document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
               }
             >
-              <Mail className="mr-2 h-4 w-4" />
-              Get In Touch
+              <Mail size={20} />
+              <p className="h-fit">Get In Touch</p>
             </Button>
           </motion.div>
         </motion.div>
@@ -60,7 +60,7 @@ export function HeroSection() {
 
       <motion.div
         animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+        transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
         className="absolute bottom-8"
       >
         <div className="w-6 h-10 border-2 border-slate-400 rounded-full flex justify-center">
