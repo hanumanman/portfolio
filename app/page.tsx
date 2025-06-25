@@ -24,7 +24,7 @@ export default function Portfolio() {
   useSmoothScroll()
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white overflow-x-hidden">
+    <div className="min-h-screen text-white overflow-x-hidden relative">
       <ParallaxBackground />
       <ProgressBar />
       <Navigation />

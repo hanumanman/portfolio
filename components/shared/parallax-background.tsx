@@ -4,14 +4,27 @@ import { motion, useScroll, useTransform } from "framer-motion"
 
 export function ParallaxBackground() {
   const { scrollYProgress } = useScroll()
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, -50])
+
+  // Transform scroll progress to control the overlay opacity
+  // At the top (0% scroll), overlay is mostly transparent
+  // As user scrolls down, overlay becomes more opaque
+  const overlayOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.1, 0.4, 0.7, 0.9])
 
   return (
     <>
-      {/* Simple moving gradient */}
+      {/* Fixed background image - stays completely still */}
+      <div
+        className="fixed inset-0 -z-30 w-full h-full bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/background.jpg')",
+          backgroundAttachment: "fixed",
+        }}
+      />
+
+      {/* Animated overlay that gradually covers the background */}
       <motion.div
-        style={{ y: y1 }}
-        className="fixed inset-0 -z-30 bg-gradient-to-br from-slate-950 to-slate-900"
+        style={{ opacity: overlayOpacity }}
+        className="fixed inset-0 -z-20 bg-gradient-to-br from-slate-950/90 via-slate-900/85 to-slate-800/90"
       />
     </>
   )

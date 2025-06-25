@@ -8,16 +8,19 @@ import { Github, Mail, Phone } from "lucide-react"
 export function HeroSection() {
   return (
     <section className="min-h-screen flex items-center justify-center relative pt-20">
-      <div className="container mx-auto px-6 text-center">
+      {/* Subtle overlay for text readability while keeping background visible */}
+      <div className="absolute inset-0 bg-slate-950/40" />
+      <div className="container mx-auto px-6 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <motion.h1
-            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent"
+            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent drop-shadow-lg"
             style={{
               backgroundSize: "200% 200%",
+              textShadow: "0 0 40px rgba(56, 189, 248, 0.3)",
             }}
             animate={{
               backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
@@ -34,7 +37,8 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-xl md:text-2xl text-slate-300 mb-8"
+            className="text-xl md:text-2xl text-slate-300 mb-8 drop-shadow-lg"
+            style={{ textShadow: "0 2px 4px rgba(0, 0, 0, 0.8)" }}
           >
             {personalInfo.title}
           </motion.p>

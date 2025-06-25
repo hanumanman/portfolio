@@ -9,7 +9,9 @@ import { Calendar, MapPin, Users } from "lucide-react"
 export function ExperienceSection() {
   return (
     <section id="experience" className="py-20 relative">
-      <div className="container mx-auto px-6">
+      {/* Section background overlay */}
+      <div className="absolute inset-0 bg-slate-950/75 backdrop-blur-sm" />
+      <div className="container mx-auto px-6 relative z-10">
         <AnimatedSection>
           <h2 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
             Work Experience

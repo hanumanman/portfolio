@@ -6,7 +6,9 @@ import { Card, CardContent } from "@/components/ui/card"
 export function AboutSection() {
   return (
     <section id="about" className="py-20 relative">
-      <div className="container mx-auto px-6">
+      {/* Section background overlay */}
+      <div className="absolute inset-0 bg-slate-950/70 backdrop-blur-sm" />
+      <div className="container mx-auto px-6 relative z-10">
         <AnimatedSection>
           <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
             About Me
