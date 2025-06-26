@@ -91,6 +91,19 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-}
-export default config
+  plugins: [
+    require("tailwindcss-animate"),
+    function ({ addUtilities }) {
+      addUtilities({
+        ".text-gradient": {
+          "@apply text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400":
+            {},
+        },
+        ".bg-gradient-primary": {
+          "@apply bg-gradient-to-r from-orange-500 to-amber-500": {},
+        },
+      });
+    },
+  ],
+};
+export default config;

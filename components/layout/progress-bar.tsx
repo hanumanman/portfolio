@@ -8,7 +8,7 @@ export function ProgressBar() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 to-amber-400 z-50"
+      className="fixed top-0 left-0 right-0 h-1 bg-gradient-primary z-50"
       style={{ scaleX }}
     />
   )

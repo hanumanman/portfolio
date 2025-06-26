@@ -12,7 +12,7 @@ export function ContactSection() {
       <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm" />
       <div className="container mx-auto px-6 relative z-10">
         <AnimatedSection>
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold text-center mb-16 text-gradient">
             Get In Touch
           </h2>
           <div className="max-w-2xl mx-auto text-center">

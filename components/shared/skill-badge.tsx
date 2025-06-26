@@ -19,7 +19,7 @@ export function SkillBadge({ skill, delay }: SkillBadgeProps) {
     >
       <Badge
         variant="secondary"
-        className="bg-slate-800/50 text-slate-300 hover:bg-gradient-to-r hover:from-orange-500/80 hover:to-amber-500/80 hover:text-white transition-all duration-300 px-4 py-2 text-sm border border-orange-500/20 backdrop-blur-sm hover:scale-110"
+                    className="bg-slate-800/50 text-slate-300 hover:bg-gradient-primary hover:text-white transition-all duration-300 px-4 py-2 text-sm border border-orange-500/20 backdrop-blur-sm hover:scale-110"
       >
         {skill}
       </Badge>

@@ -13,7 +13,7 @@ export function ExperienceSection() {
       <div className="absolute inset-0 bg-slate-950/75 backdrop-blur-sm" />
       <div className="container mx-auto px-6 relative z-10">
         <AnimatedSection>
-          <h2 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold text-center mb-8 text-gradient">
             Work Experience
           </h2>
           <p className="text-center text-slate-400 mb-16 max-w-2xl mx-auto">
