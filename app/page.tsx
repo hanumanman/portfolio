@@ -14,10 +14,11 @@ import {
 } from "@/components/sections"
 
 // Shared Components
-import { ParallaxBackground } from "@/components/shared"
 
 // Hooks
 import { useSmoothScroll } from "@/lib/hooks/use-smooth-scroll"
+
+import { ParallaxBackground } from "@/components/shared"
 
 export default function Portfolio() {
   // Initialize smooth scrolling behavior
@@ -28,7 +29,6 @@ export default function Portfolio() {
       <ParallaxBackground />
       <ProgressBar />
       <Navigation />
-
       <HeroSection />
       <AboutSection />
       <SkillsSection />

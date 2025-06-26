@@ -1,7 +1,13 @@
 "use client"
 
 import { AnimatedSection } from "@/components/shared/animated-section"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { projects } from "@/lib/data/portfolio-data"
 import { motion } from "framer-motion"
 import { Calendar, MapPin, Users } from "lucide-react"
@@ -17,13 +23,16 @@ export function ExperienceSection() {
             Work Experience
           </h2>
           <p className="text-center text-slate-400 mb-16 max-w-2xl mx-auto">
-            Here are some notable projects I've worked on. These represent a selection of my work -
-            I've contributed to many more projects across various domains and technologies.
+            Here are some notable projects I've worked on. These represent a
+            selection of my work - I've contributed to many more projects across
+            various domains and technologies.
           </p>
           <div className="max-w-4xl mx-auto mb-12">
             <Card className="bg-slate-900/50 border-slate-700 backdrop-blur-sm shadow-xl shadow-orange-500/10">
               <CardHeader>
-                <CardTitle className="text-2xl text-orange-400">Sotatek</CardTitle>
+                <CardTitle className="text-2xl text-orange-400">
+                  Sotatek
+                </CardTitle>
                 <CardDescription className="text-slate-400 flex items-center gap-2">
                   <Calendar className="h-4 w-4" />
                   2021 - Present
@@ -42,7 +51,9 @@ export function ExperienceSection() {
               >
                 <Card className="bg-slate-900/50 border-slate-700 backdrop-blur-sm hover:bg-slate-800/50 transition-colors shadow-xl shadow-orange-500/5">
                   <CardHeader>
-                    <CardTitle className="text-xl text-orange-400">{project.title}</CardTitle>
+                    <CardTitle className="text-xl text-orange-400">
+                      {project.title}
+                    </CardTitle>
                     <CardDescription className="text-slate-400">
                       <div className="flex flex-wrap gap-4 mt-2">
                         <span className="flex items-center gap-1">
@@ -57,10 +68,15 @@ export function ExperienceSection() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <h4 className="font-semibold mb-3 text-slate-200">Key Responsibilities:</h4>
+                    <h4 className="font-semibold mb-3 text-slate-200">
+                      Key Responsibilities:
+                    </h4>
                     <ul className="space-y-2">
                       {project.responsibilities.map((responsibility, idx) => (
-                        <li key={idx} className="text-slate-300 flex items-start gap-2">
+                        <li
+                          key={idx}
+                          className="text-slate-300 flex items-start gap-2"
+                        >
                           <span className="text-orange-400 mt-1">•</span>
                           {responsibility}
                         </li>

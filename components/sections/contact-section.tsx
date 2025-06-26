@@ -17,8 +17,8 @@ export function ContactSection() {
           </h2>
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-lg text-slate-300 mb-8">
-              I'm always interested in new opportunities and exciting projects. Feel free to reach
-              out if you'd like to work together!
+              I'm always interested in new opportunities and exciting projects.
+              Feel free to reach out if you'd like to work together!
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <motion.a

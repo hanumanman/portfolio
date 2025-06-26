@@ -36,8 +36,10 @@ export function SkillsSection() {
           </h2>
           <div className="max-w-6xl mx-auto">
             {Object.entries(skills).map(([category, items], categoryIndex) => {
-              const IconComponent = categoryIcons[category as keyof typeof categoryIcons]
-              const colorClass = categoryColors[category as keyof typeof categoryColors]
+              const IconComponent =
+                categoryIcons[category as keyof typeof categoryIcons]
+              const colorClass =
+                categoryColors[category as keyof typeof categoryColors]
 
               return (
                 <motion.div

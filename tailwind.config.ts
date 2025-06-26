@@ -102,8 +102,8 @@ const config: Config = {
         ".bg-gradient-primary": {
           "@apply bg-gradient-to-r from-orange-500 to-amber-500": {},
         },
-      });
+      })
     },
   ],
-};
-export default config;
+}
+export default config

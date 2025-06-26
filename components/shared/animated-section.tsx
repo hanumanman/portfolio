@@ -9,7 +9,10 @@ interface AnimatedSectionProps {
   className?: string
 }
 
-export function AnimatedSection({ children, className = "" }: AnimatedSectionProps) {
+export function AnimatedSection({
+  children,
+  className = "",
+}: AnimatedSectionProps) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 

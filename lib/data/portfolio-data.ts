@@ -1,6 +1,15 @@
 export const skills = {
   programming: ["JavaScript", "TypeScript", "HTML/CSS", "SQL", "Lua", "C++"],
-  frameworks: ["React", "NextJS", "Svelte", "Node", "Hono", "Express", "NestJS", "Elysia"],
+  frameworks: [
+    "React",
+    "NextJS",
+    "Svelte",
+    "Node",
+    "Hono",
+    "Express",
+    "NestJS",
+    "Elysia",
+  ],
   database: ["SQL", "SQLite", "PostgreSQL", "MongoDB"],
   tools: ["Git", "Docker", "Confluence", "Jira", "Figma"],
   system: ["Linux", "Windows"],
@@ -56,4 +65,10 @@ export const personalInfo = {
   github: "hanumanman",
 }
 
-export const navigationItems = ["About", "Skills", "Education", "Experience", "Contact"]
+export const navigationItems = [
+  "About",
+  "Skills",
+  "Education",
+  "Experience",
+  "Contact",
+]

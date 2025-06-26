@@ -18,7 +18,9 @@ export function useSmoothScroll() {
     links.forEach(link => link.addEventListener("click", handleSmoothScroll))
 
     return () => {
-      links.forEach(link => link.removeEventListener("click", handleSmoothScroll))
+      links.forEach(link =>
+        link.removeEventListener("click", handleSmoothScroll)
+      )
     }
   }, [])
 }

@@ -1,7 +1,12 @@
 "use client"
 
 import { AnimatedSection } from "@/components/shared/animated-section"
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { motion } from "framer-motion"
 
 export function EducationSection() {
@@ -42,7 +47,9 @@ export function EducationSection() {
             >
               <Card className="bg-slate-900/50 border-slate-700 backdrop-blur-sm hover:bg-slate-800/50 transition-colors shadow-xl shadow-amber-500/10 h-full flex flex-col">
                 <CardHeader className="flex-1">
-                  <CardTitle className="text-amber-400">British Council Vietnam</CardTitle>
+                  <CardTitle className="text-amber-400">
+                    British Council Vietnam
+                  </CardTitle>
                   <CardDescription className="text-slate-400">
                     7.5 in Academic IELTS Test
                   </CardDescription>
