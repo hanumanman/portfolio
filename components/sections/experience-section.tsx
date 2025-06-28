@@ -35,7 +35,7 @@ export function ExperienceSection() {
                 </CardTitle>
                 <CardDescription className="text-slate-400 flex items-center gap-2">
                   <Calendar className="h-4 w-4" />
-                  2021 - Present
+                  2021 - 2025
                 </CardDescription>
               </CardHeader>
             </Card>

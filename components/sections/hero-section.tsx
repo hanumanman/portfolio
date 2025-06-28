@@ -48,7 +48,7 @@ export function HeroSection() {
           >
             <Button
               size="lg"
-              className="bg-gradient-primary min-h-fit hover:brightness-110 transition-all duration-200 shadow-lg shadow-orange-500/25 px-4 gap-2"
+              className="bg-gradient-primary items-center hover:brightness-110 transition-all duration-200 shadow-lg shadow-orange-500/25"
               onClick={() =>
                 document
                   .getElementById("contact")
@@ -56,7 +56,7 @@ export function HeroSection() {
               }
             >
               <Mail />
-              <div className="grid place-items-center h-4">Get In Touch</div>
+              <p className="text-[1rem]">Get In Touch</p>
             </Button>
           </motion.div>
         </motion.div>
