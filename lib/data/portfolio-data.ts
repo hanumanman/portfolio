@@ -22,10 +22,10 @@ export const projects = [
     client: "Singapore-based fashion brand",
     teamSize: 11,
     responsibilities: [
-      "Setting up codebase and architecture",
-      "Built responsive, accessible UIs adaptable across devices",
-      "Integrate database connections",
-      "Maintained code quality through unit testing",
+      "Setting up codebase and architecture.",
+      "Built responsive, accessible UIs adaptable across devices.",
+      "Integrate database connections.",
+      "Maintained code quality through unit testing.",
     ],
   },
   {
@@ -33,8 +33,8 @@ export const projects = [
     client: "Hongkong-based software company",
     teamSize: 20,
     responsibilities: [
-      "Develop a travel platform affiliated with hotels around the world",
-      "Built front-end interfaces and connected them with backend APIs collaboratively",
+      "Develop a travel platform affiliated with hotels around the world.",
+      "Built front-end interfaces and connected them with backend APIs collaboratively.",
     ],
   },
   {
@@ -42,8 +42,8 @@ export const projects = [
     client: "Korean financial firm",
     teamSize: 20,
     responsibilities: [
-      "Translated Figma designs into functional UI components",
-      "Handled API integration in coordination with backend teams",
+      "Translated Figma designs into functional UI components.",
+      "Handled API integration in coordination with backend teams.",
     ],
   },
   {
@@ -51,8 +51,8 @@ export const projects = [
     client: "US financial firm",
     teamSize: 10,
     responsibilities: [
-      "Maintained and improved the firm's main financial services website",
-      "Migrated the tech stack from Vite + React to Next.js for better performance and scalability",
+      "Maintained and improved the firm's main financial services website.",
+      "Migrated the tech stack from Vite + React to Next.js for better performance and scalability.",
     ],
   },
 ]
